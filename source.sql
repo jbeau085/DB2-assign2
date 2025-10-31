@@ -1,33 +1,36 @@
 DROP DATABASE IF EXISTS db2assign2;
-CREATE DATABASE dbassign2;
-USE dbassign2;
+CREATE DATABASE db2assign2;
+USE db2assign2;
 
 CREATE TABLE deptInfo (
-	deptID TEXT PRIMARY KEY,
+	--looks like dept ID is 9 characters long
+	deptID VARCHAR(10) PRIMARY KEY,
 	deptDOE DATE,
-	deptName TEXT
+	deptName VARCHAR(255)
 	);
 
 CREATE TABLE employInfo(
-	employID TEXT PRIMARY KEY,
+	--looks like employID is 8 characters long
+	employID VARCHAR(9) PRIMARY KEY,
 	employDOB DATE,
 	employHireDate DATE,
-	employDept TEXT
+	employDept VARCHAR(9)
 );
 
 CREATE TABLE studentCounselling (
-	stuID TEXT PRIMARY KEY,
+	--looks like its 11 long
+	stuID VARCHAR(12) PRIMARY KEY,
 	stuDOA DATE,
 	stuDOB DATE,
-	stuDeptChoices TEXT,
-	stuDeptAdmission TEXT
+	stuDeptChoices VARCHAR(10),
+	stuDeptAdmission VARCHAR(10)
 	);
 
 CREATE TABLE studentPerformance (
-	stuID TEXT PRIMARY KEY,
-	semester TEXT,
-	paperID TEXT,
-	paperName TEXT,
+	stuID VARCHAR(12) PRIMARY KEY,
+	semester VARCHAR(255),
+	paperID VARCHAR(255),
+	paperName VARCHAR(255),
 	marks INT,
 	effortHours INT
 	);

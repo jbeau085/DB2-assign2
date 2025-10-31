@@ -3,25 +3,22 @@ CREATE DATABASE db2assign2;
 USE db2assign2;
 
 CREATE TABLE deptInfo (
-	--looks like dept ID is 9 characters long
 	deptID VARCHAR(10) PRIMARY KEY,
-	deptDOE DATE,
-	deptName VARCHAR(255)
+	deptName VARCHAR(255),
+	deptDOE VARCHAR(20)
 	);
 
 CREATE TABLE employInfo(
-	--looks like employID is 8 characters long
 	employID VARCHAR(9) PRIMARY KEY,
-	employDOB DATE,
-	employHireDate DATE,
+	employDOB VARCHAR(20),
+	employHireDate VARCHAR(20),
 	employDept VARCHAR(9)
 );
 
 CREATE TABLE studentCounselling (
-	--looks like its 11 long
 	stuID VARCHAR(12) PRIMARY KEY,
-	stuDOA DATE,
-	stuDOB DATE,
+	stuDOA VARCHAR(20),
+	stuDOB VARCHAR(20),
 	stuDeptChoices VARCHAR(10),
 	stuDeptAdmission VARCHAR(10)
 	);
@@ -36,19 +33,19 @@ CREATE TABLE studentPerformance (
 	);
 
 
-LOAD DATA LOCAL INFILE '/data/Department_Information.csv' 
+LOAD DATA LOCAL INFILE './data/Department_Information.csv' 
 INTO TABLE deptInfo 
 FIELDS TERMINATED BY ',' IGNORE 1 LINES;
 
-LOAD DATA LOCAL INFILE '/data/Employee_Information.csv' 
+LOAD DATA LOCAL INFILE './data/Employee_Information.csv' 
 INTO TABLE employInfo 
 FIELDS TERMINATED BY ',' IGNORE 1 LINES;
 
-LOAD DATA LOCAL INFILE '/data/Student_Counceling_Information.csv' 
+LOAD DATA LOCAL INFILE './data/Student_Counceling_Information.csv' 
 INTO TABLE studentCounselling 
 FIELDS TERMINATED BY ',' IGNORE 1 LINES;
 
-LOAD DATA LOCAL INFILE '/data/Student_Performance_Data.csv' 
+LOAD DATA LOCAL INFILE './data/Student_Performance_Data.csv' 
 INTO TABLE studentPerformance 
 FIELDS TERMINATED BY ',' IGNORE 1 LINES;
 
